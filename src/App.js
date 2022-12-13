@@ -1,37 +1,17 @@
-import {BiUserPin} from 'react-icons/bi'
-import {MdOutlineVisibility} from 'react-icons/md'
-import {TbCurrentLocation} from 'react-icons/tb'
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Home from './Components/Home'
+import Login from './Components/Login'
 import './App.css';
-
-function App() {
-  return (
-    <div className="login-page">
-  <div  className='login-page-card' >
-           <form>
-            <div className='user-name'>
-               <span className='icon-style'><BiUserPin/></span>
-              <input type="text" placeholder=' User name'/>
-            </div>
-            <div className='user-name'>
-              <span className='icon-style'><MdOutlineVisibility/></span>
-              <input type="text" placeholder=' Password'/>
-            </div>
+const App =()=>{
+  return(
+    <BrowserRouter>
+    <Routes>
+      <Route path="/home" element={ <Home />} />
+      <Route  path="/" element={<Login/>} />    
            
-            <div className='user-name' >
-              <span className=' icon-style'><TbCurrentLocation /></span>
-              <select class="k" value={''} >
-                    <option  >Select Location</option>
-                    <option>hyder</option>
-                    <option>hyder</option>
-                    <option>hyder</option>
-               </select>
-            </div>
-       
-           </form>
-  </div>
- 
-</div>
-  );
+  
+    </Routes>
+    </BrowserRouter>
+  )
 }
-
-export default App;
+export default App
